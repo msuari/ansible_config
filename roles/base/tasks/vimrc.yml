@@ -1,0 +1,32 @@
+---
+- name: Install vim
+  apt:
+    pkg:
+      - vim
+
+- name: Check if the the directory is empty
+  find:
+    paths: '~/.vim/'
+  register: vim_files
+
+- name: Download vimrc
+  git:
+    repo: 'https://github.com/msuari/vimrc'
+    dest: '~/.vim/'
+  when: vim_files.matched == 0
+
+- name:
+  find:
+    paths: '~/.vimrc'
+  register: vimrc_file
+
+- name: Create symlink vimrc
+  file:
+    src: '~/.vim/vimrc'
+    dest: '~/.vimrc'
+    state: link
+  when: vimrc_file.matched == 0
+
+- name: Install plugin
+  shell:
+    cmd: vim -cmd PlugInstall -c"q"

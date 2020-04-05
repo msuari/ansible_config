@@ -5,11 +5,13 @@
       - python-pip
       - python3-venv
       - python3-pip
+  become: yes
 
 - name: Install setuptools
   shell: pip install setuptools
+  become: yes
 
-- name: Install some pip packages
+- name: Install some pip2 packages
   pip:
     name:
       - ipython

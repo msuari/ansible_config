@@ -17,6 +17,12 @@
       - python
       - python3.8
       - git
+      - docker
+      - silversearcher-ag
+  become: yes
+
 
 - import_tasks: terminator.yml
 - import_tasks: pip.yml
+- import_tasks: vimrc.yml
+- import_tasks: fzf.yml

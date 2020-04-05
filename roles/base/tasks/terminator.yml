@@ -2,3 +2,14 @@
 - name: Install Terminator
   apt: 
     name: terminator
+
+- name: Create directory if not exists
+  file:
+    path: "~/.config/terminator/"
+    state: "directory"
+    recurse: yes
+
+- name: Copy config file
+  copy:
+    src: "{{ role_path }}/files/terminator_config"
+    dest: "~/.config/terminator/config"
