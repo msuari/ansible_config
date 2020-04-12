@@ -22,3 +22,10 @@
     name:
       - virtualenvwrapper
       - ipython
+
+- name: Install some pip packages
+  pip:
+    executable: pip
+    name:
+      - docker-compose
+  become: yes

@@ -19,9 +19,17 @@
       - git
       - docker
       - silversearcher-ag
+      - libreoffice
+      - curl
+      - apt-transport-https
+      - ca-certificates
+      - gnupg-agent
+      - software-properties-common
   become: yes
 
 
+- import_tasks: external.yml
+- import_tasks: boostnote.yml
 - import_tasks: terminator.yml
 - import_tasks: pip.yml
 - import_tasks: vimrc.yml

@@ -1,0 +1,7 @@
+---
+- name: Install media players
+  snap:
+    name:
+      - vlc
+      - spotify
+  become: yes

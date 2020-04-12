@@ -1,0 +1,12 @@
+---
+- name: Download Boostnote
+  get_url:
+    url: https://github.com/BoostIO/boost-releases/releases/download/v0.14.0/boostnote_0.14.0_amd64.deb
+    dest: /tmp/boostnote_0.14.0_amd64.deb
+  become: yes
+  register: boostnote_dw
+
+- name: Install boostnote
+  shell:
+    cmd: apt install {{ boostnote_dw.dest }}
+  become: yes
