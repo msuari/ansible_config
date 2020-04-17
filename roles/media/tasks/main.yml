@@ -5,3 +5,16 @@
       - vlc
       - spotify
   become: yes
+
+- name: Install slack
+  snap:
+    name:
+      - slack
+    classic: yes
+  become: yes
+
+- name: Install apt media packages
+  apt:
+    pkg:
+      - gimp
+  become: yes

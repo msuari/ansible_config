@@ -25,12 +25,20 @@
       - ca-certificates
       - gnupg-agent
       - software-properties-common
+      - awscli
+      - openjdk-11-jdk
+      - openjdk-11-jre
+      - tree
+      - net-tools
+      - jupyter
   become: yes
 
 
+- import_tasks: security.yml
 - import_tasks: external.yml
 - import_tasks: boostnote.yml
 - import_tasks: terminator.yml
 - import_tasks: pip.yml
 - import_tasks: vimrc.yml
 - import_tasks: fzf.yml
+- import_tasks: git.yml

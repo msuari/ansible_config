@@ -1,0 +1,8 @@
+---
+- name: Configure git
+  shell:
+    cmd: git config --global user.name "Marina Suari"
+
+- name: Configure git user
+  shell:
+    cmd: git config --global user.email msuarir@gmail.com

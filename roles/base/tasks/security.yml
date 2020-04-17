@@ -1,0 +1,5 @@
+---
+- name: Install a .deb package from the internet.
+  apt:
+    deb: https://github.com/buttercup/buttercup-desktop/releases/download/v1.19.0/buttercup-desktop_1.19.0_amd64.deb
+  become: yes
