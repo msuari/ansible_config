@@ -28,6 +28,15 @@
     - repo: https://dbeaver.io/debs/dbeaver-ce
       add: '/'
       file: 'dbeaver'
+    - repo: http://archive.ubuntu.com/ubuntu/
+      add: 'bionic universe'
+      file: 'universe'
+    - repo: http://archive.ubuntu.com/ubuntu/
+      add: 'bionic-updates universe'
+      file: 'universe'
+    - repo: http://archive.ubuntu.com/ubuntu/
+      add: 'bionic-security universe'
+      file: 'universe'
   become: yes
 
 - name: Install packages
@@ -42,4 +51,6 @@
     - docker-ce-cli
     - containerd.io
     - dbeaver-ce
+    - exfat-fuse
+    - exfat-utils
   become: yes
