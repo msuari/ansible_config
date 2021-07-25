@@ -36,7 +36,7 @@
 
 - import_tasks: security.yml
 - import_tasks: external.yml
-- import_tasks: boostnote.yml
+# - import_tasks: boostnote.yml
 - import_tasks: terminator.yml
 - import_tasks: pip.yml
 - import_tasks: vimrc.yml

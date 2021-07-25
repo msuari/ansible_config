@@ -1,20 +1,16 @@
 ---
-- name: Install Python
+- name: Install Python3
   apt:
     pkg:
-      - python-pip
+      - python3-setuptools
       - python3-venv
       - python3-pip
+      - python3.8
   become: yes
 
 - name: Install setuptools
   shell: pip install setuptools
   become: yes
-
-- name: Install some pip2 packages
-  pip:
-    name:
-      - ipython
 
 - name: Install some pip3 packages
   pip:
@@ -22,11 +18,12 @@
     name:
       - virtualenvwrapper
       - ipython
-  become: yes
+      - docker-compose
+  become: no
 
 - name: Install some pip packages
   pip:
     executable: pip
     name:
       - docker-compose
-  become: yes
+  become: no

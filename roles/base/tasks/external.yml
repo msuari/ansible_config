@@ -41,7 +41,7 @@
 
 - name: Install packages
   apt:
-    state: installed
+    state: present
     pkg: "{{ item }}"
     update_cache: yes
   with_items:

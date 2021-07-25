@@ -27,6 +27,6 @@
     state: link
   when: vimrc_file.matched == 0
 
-- name: Install plugin
-  shell:
-    cmd: vim -cmd PlugInstall -c"q"
+# - name: Install plugin
+#   shell:
+#     cmd: vim -cmd PlugInstall -c"q"
